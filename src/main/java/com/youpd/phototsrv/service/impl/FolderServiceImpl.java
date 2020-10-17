@@ -42,6 +42,7 @@ public class FolderServiceImpl implements IFolderService {
       File file = new File(temp.getAbsolutePath());
       FolderAndChild folderAndChild = new FolderAndChild();
       folderAndChild.setAbsolutePath(temp.getAbsolutePath());
+      folderAndChild.setName(temp.getAbsolutePath());
       folderAndChildList.add(folderAndChild);
       folderAndChildAll.setChild(folderAndChildList);
       if (file.isDirectory()) {

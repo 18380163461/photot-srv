@@ -11,10 +11,10 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.List;
 import javax.servlet.http.HttpServletResponse;
+import net.coobird.thumbnailator.Thumbnails;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -68,9 +68,6 @@ public class PhotoController {
    */
   @RequestMapping("download")
   public void download(HttpServletResponse response, String path) throws Exception {
-    if (ObjectUtils.isEmpty(path)) {
-      path = "D:\\1资料\\壁纸\\ui_loading\\loading_01.png";
-    }
     // 设置下载的响应头信息
     File file = new File(path);
     response.setHeader("Content-Disposition",
@@ -90,19 +87,12 @@ public class PhotoController {
    */
   @RequestMapping("downloadThumbnail")
   public void downloadThumbnail(HttpServletResponse response, String path) throws Exception {
-    if (ObjectUtils.isEmpty(path)) {
-      path = "D:\\1资料\\壁纸\\ui_loading\\loading_01.png";
-    }
     // 设置下载的响应头信息
     File file = new File(path);
     response.setHeader("Content-Disposition",
         "attachment;fileName=" + file.getName());
-    InputStream is = new FileInputStream(file);
     OutputStream os = response.getOutputStream();
-    byte[] buffer = new byte[1024]; // 图片文件流缓存池
-    while (is.read(buffer) != -1) {
-      os.write(buffer);
-    }
-    os.flush();
+    Thumbnails.of(path)
+        .size(800, 800).toOutputStream(os);
   }
 }
