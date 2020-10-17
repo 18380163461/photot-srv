@@ -21,7 +21,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@RestController()
+@RequestMapping("photo")
 public class PhotoController {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(PhotoController.class);
