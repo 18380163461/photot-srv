@@ -6,7 +6,8 @@ public class OrderConstants {
   private OrderConstants() {
   }
 
-  public static int INSERTBATCH_COUNT = 1000;
+  public static final String SUO_LUE_TU = "SuoLueTu";
+  public static final int INSERTBATCH_COUNT = 1000;
 
   /**
    * 公共状态类型

@@ -1,5 +1,6 @@
 package com.youpd.phototsrv.utils;
 
+import com.youpd.phototsrv.constants.OrderConstants;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -15,7 +16,11 @@ public class SmartFileUtils {
 
   public static String videoImage(String filePath) throws FrameGrabber.Exception {
     File file = new File(filePath);
-    return videoImage(filePath, file.getParent(), file.getName().split("\\.")[0]);
+    return videoImage(filePath, file.getParent() + File.separator + OrderConstants.SUO_LUE_TU, file.getName().split("\\.")[0]);
+  }
+
+  public static String videoImage(File file) throws FrameGrabber.Exception {
+    return videoImage(file.getAbsolutePath(), file.getParent() + File.separator + OrderConstants.SUO_LUE_TU, file.getName().split("\\.")[0]);
   }
 
   /**
