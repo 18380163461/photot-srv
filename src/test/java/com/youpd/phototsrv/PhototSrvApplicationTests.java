@@ -1,6 +1,5 @@
 package com.youpd.phototsrv;
 
-import com.youpd.phototsrv.utils.SmartFileUtils;
 import net.coobird.thumbnailator.Thumbnails;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,7 +20,7 @@ class PhototSrvApplicationTests {
 
   @Test
   void Thumbnails2() throws Exception {
-    String ss = SmartFileUtils.videoImage("D:\\1资料\\111111\\VID_20200217_211104.mp4");
+    //String ss = SmartFileUtils.videoImage("D:\\1资料\\111111\\VID_20200217_211104.mp4");
     System.out.println("");
   }
 }

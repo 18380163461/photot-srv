@@ -1,20 +1,8 @@
 package com.youpd.phototsrv.utils;
 
-import com.youpd.phototsrv.constants.OrderConstants;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.util.UUID;
-import javax.imageio.ImageIO;
-import org.bytedeco.javacv.FFmpegFrameGrabber;
-import org.bytedeco.javacv.Frame;
-import org.bytedeco.javacv.FrameGrabber;
-import org.bytedeco.javacv.FrameGrabber.Exception;
-import org.bytedeco.javacv.Java2DFrameConverter;
-
 public class SmartFileUtils {
 
-  public static String videoImage(String filePath) throws FrameGrabber.Exception {
+  /*public static String videoImage(String filePath) throws FrameGrabber.Exception {
     File file = new File(filePath);
     return videoImage(filePath, file.getParent() + File.separator + OrderConstants.SUO_LUE_TU, file.getName().split("\\.")[0]);
   }
@@ -23,13 +11,13 @@ public class SmartFileUtils {
     return videoImage(file.getAbsolutePath(), file.getParent() + File.separator + OrderConstants.SUO_LUE_TU, file.getName().split("\\.")[0]);
   }
 
-  /**
+  *//**
    * * 截取视频第六帧的图片
    *
    * @param filePath 视频路径
    * @param dir 文件存放的根目录
    * @return 图片的相对路径 例：pic/1.png
-   */
+   *//*
   public static String videoImage(String filePath, String dir, String picName) throws FrameGrabber.Exception {
     String pngPath = "";
     FFmpegFrameGrabber ff = FFmpegFrameGrabber.createDefault(filePath);
@@ -54,31 +42,31 @@ public class SmartFileUtils {
     return dir + File.separator + pngPath;
   }
 
-  /**
+  *//**
    * 生成图片的相对路径
    *
    * @return 图片的相对路径 例：pic/1.png
-   */
+   *//*
   private static String getPngPath() {
     return getUUID() + ".png";
   }
 
 
-  /**
+  *//**
    * 生成唯一的uuid
    *
    * @return uuid
-   */
+   *//*
   private static String getUUID() {
     return UUID.randomUUID().toString().replace("-", "");
   }
 
 
-  /**
+  *//**
    * 截取缩略图
    *
    * @param f Frame
-   */
+   *//*
   private static void doExecuteFrame(Frame f, String targerFilePath) throws Exception {
     String imagemat = "png";
     if (null == f || null == f.image) {
@@ -94,5 +82,5 @@ public class SmartFileUtils {
     } catch (IOException e) {
       e.printStackTrace();
     }
-  }
+  }*/
 }

@@ -50,16 +50,13 @@
       <artifactId>thumbnailator</artifactId>
       <version>0.4.12</version>
     </dependency>
+    <!--视频缩略图
     <dependency>
       <groupId>org.bytedeco</groupId>
       <artifactId>javacv-platform</artifactId>
       <version>1.5.3</version>
     </dependency>
-    <dependency>
-      <groupId>commons-fileupload</groupId>
-      <artifactId>commons-fileupload</artifactId>
-      <version>1.4</version>
-    </dependency>
+    -->
   </dependencies>
 
   <build>
