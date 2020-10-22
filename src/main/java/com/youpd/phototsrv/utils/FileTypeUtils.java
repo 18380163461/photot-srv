@@ -11,6 +11,15 @@ public class FileTypeUtils {
   private static final String PIC = "bmp,jpg,png,tif,gif,pcx,tga,exif,fpx,svg,psd,cdr,pcd,dxf,ufo,eps,ai,raw,WMF,webp,avif";
   private static final String VIDEO = "wmv,asf,asx,mp4,rm,rmvb,mov,m4v,3gp";
 
+  public static boolean isPic(String name) {
+    for (String temp : PIC.split(",")) {
+      if (name.endsWith(temp)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   /**
    * Get the Mime Type from a File
    *

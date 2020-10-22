@@ -4,6 +4,7 @@ import com.youpd.phototsrv.constants.BusinessConstants;
 import com.youpd.phototsrv.dao.FolderAndChild;
 import com.youpd.phototsrv.model.AddFolderRequset;
 import com.youpd.phototsrv.model.BaseResponse;
+import com.youpd.phototsrv.model.FloderTree;
 import com.youpd.phototsrv.service.interfaces.IFolderService;
 import java.io.File;
 import java.io.FileInputStream;
@@ -52,7 +53,14 @@ public class PhotoController {
   public BaseResponse<FolderAndChild> folders() {
     return iFolderService.folders();
   }
-
+  /**
+   * @description: <p> 获取固定文件夹下的最多两级目录<p/>
+   * @date: 2020-10-22 11:47
+   */
+  @GetMapping("folders2")
+  public BaseResponse<List<FloderTree>> folders2(String path) {
+    return iFolderService.folders2(path);
+  }
   /**
    * @description: <p>获取所有文件 <p/>
    * @date: 2020-10-17 1:04
